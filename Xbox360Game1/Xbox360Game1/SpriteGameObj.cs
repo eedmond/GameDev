@@ -35,11 +35,6 @@ namespace Xbox360Game1
             bounceSound = content.Load<SoundEffect>("sound/bounceSound");
         }
 
-        public override void UnloadContent()
-        {
-            //Put something here?
-        }
-
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, Color.White);

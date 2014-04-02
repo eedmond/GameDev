@@ -39,11 +39,6 @@ namespace Xbox360Game1
             throw new NotImplementedException();
         }
 
-        public override void UnloadContent()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             throw new NotImplementedException();

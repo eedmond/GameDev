@@ -60,6 +60,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameMap.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

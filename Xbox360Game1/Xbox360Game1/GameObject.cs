@@ -14,12 +14,11 @@ namespace Xbox360Game1
         public Vector2 position;
         protected Texture2D sprite;
 
-        GamePadState gamePadState;
-        KeyboardState keyboardState;
+        protected GamePadState gamePadState;
+        protected KeyboardState keyboardState;
 
         public abstract void Update(GameTime gameTime, GraphicsDeviceManager graphics);
         public abstract void LoadContent(ContentManager content);
-        public abstract void UnloadContent();
         public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
     }
 }

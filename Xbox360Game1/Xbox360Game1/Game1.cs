@@ -67,8 +67,6 @@ namespace Xbox360Game1
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
-            foreach (GameObject go in objects)
-                go.UnloadContent();
         }
 
         // Store some information about the sprite's motion.
