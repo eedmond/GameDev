@@ -11,6 +11,11 @@ namespace Xbox360Game1
 {
     public abstract class GameObject
     {
+        /// <summary>
+        /// This will be set by the owning map... do not modify this in Update!
+        /// </summary>
+        public GameMap map;
+
         public Vector2 position;
         protected Texture2D sprite;
 
