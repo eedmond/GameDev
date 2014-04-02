@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,20 @@ namespace Xbox360Game1
         public Vector2 speed;
         public Vector2 position;
 
-        void Update(GameTime gameTime)
+        protected Texture2D sprite;
+
+        public void Update(GameTime gameTime, GraphicsDeviceManager graphics)
         {
-            UpdateObject(gameTime);
+            UpdateObject(gameTime, graphics);
 
             position.X += speed.X;
             position.Y += speed.Y;
         }
 
-        abstract void UpdateObject(GameTime gameTime);
-        abstract void Draw(GameTime gameTime);
+        public abstract void LoadContent();
+        public abstract void UnloadContent();
+        public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
+
+        protected abstract void UpdateObject(GameTime gameTime, GraphicsDeviceManager graphics);
     }
 }
