@@ -43,12 +43,14 @@ namespace Xbox360Game1
 
         // Set the coordinates to draw the sprite at.
         Vector2 spritePosition = Vector2.Zero;
+        SoundEffect BounceSound;
 
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             myTexture = Content.Load<Texture2D>("profile_pic");
+            BounceSound = Content.Load<SoundEffect>("sound/bounceSound");
         }
 
         /// <summary>
@@ -92,24 +94,28 @@ namespace Xbox360Game1
             // Check for bounce.
             if (spritePosition.X > MaxX)
             {
+                BounceSound.Play();
                 spriteSpeed.X *= -1;
                 spritePosition.X = MaxX;
             }
 
             else if (spritePosition.X < MinX)
             {
+                BounceSound.Play();
                 spriteSpeed.X *= -1;
                 spritePosition.X = MinX;
             }
 
             if (spritePosition.Y > MaxY)
             {
+                BounceSound.Play();
                 spriteSpeed.Y *= -1;
                 spritePosition.Y = MaxY;
             }
 
             else if (spritePosition.Y < MinY)
             {
+                BounceSound.Play();
                 spriteSpeed.Y *= -1;
                 spritePosition.Y = MinY;
             }
