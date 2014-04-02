@@ -55,7 +55,7 @@ namespace Xbox360Game1
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             foreach (GameObject go in objects)
-                go.LoadContent();
+                go.LoadContent(Content);
             //myTexture = Content.Load<Texture2D>("profile_pic");
             //BounceSound = Content.Load<SoundEffect>("sound/bounceSound");
         }
@@ -151,6 +151,7 @@ namespace Xbox360Game1
         }
 
          */
+
         protected override void Draw(GameTime gameTime)
         {
             graphics.GraphicsDevice.Clear(Color.CornflowerBlue);

@@ -27,5 +27,26 @@ namespace Xbox360Game1
             this.sprite = background;
         }
         /**/
+
+
+        public override void Update(GameTime gameTime, GraphicsDeviceManager graphics)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void LoadContent(Microsoft.Xna.Framework.Content.ContentManager content)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void UnloadContent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

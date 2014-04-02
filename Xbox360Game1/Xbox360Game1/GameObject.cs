@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -17,7 +18,7 @@ namespace Xbox360Game1
         KeyboardState keyboardState;
 
         public abstract void Update(GameTime gameTime, GraphicsDeviceManager graphics);
-        public abstract void LoadContent();
+        public abstract void LoadContent(ContentManager content);
         public abstract void UnloadContent();
         public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
     }

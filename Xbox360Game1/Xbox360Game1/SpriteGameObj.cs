@@ -15,6 +15,8 @@ namespace Xbox360Game1
 
         SoundEffect bounceSound;
 
+        Vector2 speed;
+
         public SpriteGameObj()
         {
             position = Vector2.Zero;
@@ -35,7 +37,7 @@ namespace Xbox360Game1
 
         public override void UnloadContent()
         {
-            //Should something go here?
+            //Put something here?
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -43,7 +45,7 @@ namespace Xbox360Game1
             spriteBatch.Draw(sprite, position, Color.White);
         }
 
-        protected override void UpdateObject(GameTime gameTime, GraphicsDeviceManager graphics)
+        public override void Update(GameTime gameTime, GraphicsDeviceManager graphics)
         {
             int MaxX =
                 graphics.GraphicsDevice.Viewport.Width - sprite.Width;
