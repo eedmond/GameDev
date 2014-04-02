@@ -17,23 +17,9 @@ namespace Xbox360Game1
         String menuName;
 
         /* Constructors (you can't use optional arguments in here...) */
-        public Menu(List<String> menuOptions)
-        {
-            this.menuOptions = menuOptions;
-        }
-
-        public Menu(List<String> menuOptions, String menuName)
-        {
-            this.menuOptions = menuOptions;
-            this.menuName = menuName;
-        }
-
-        public Menu(List<String> menuOptions, Texture2D background)
-        {
-            this.menuOptions = menuOptions;
-            this.sprite = background;
-        }
-
+        public Menu(List<String> menuOptions) : this(menuOptions, "Menu", null) {}
+        public Menu(List<String> menuOptions, String menuName) : this(menuOptions, menuName, null) {}
+        public Menu(List<String> menuOptions, Texture2D background) : this(menuOptions, "Menu", background) {}
         public Menu(List<String> menuOptions, String menuName, Texture2D background)
         {
             this.menuOptions = menuOptions;
