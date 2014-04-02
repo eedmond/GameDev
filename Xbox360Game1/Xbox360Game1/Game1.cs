@@ -19,10 +19,15 @@ namespace Xbox360Game1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        List<GameObject> objects;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            objects = new List<GameObject>();
+            objects.Add(new SpriteGameObj());
+            objects.Add(new SpriteGameObj(35, 40));
         }
 
         /// <summary>
@@ -39,18 +44,20 @@ namespace Xbox360Game1
         }
 
         // This is a texture we can render.
-        Texture2D myTexture;
+        //Texture2D myTexture;
 
         // Set the coordinates to draw the sprite at.
-        Vector2 spritePosition = Vector2.Zero;
-        SoundEffect BounceSound;
+        //Vector2 spritePosition = Vector2.Zero;
+        //SoundEffect BounceSound;
 
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            myTexture = Content.Load<Texture2D>("profile_pic");
-            BounceSound = Content.Load<SoundEffect>("sound/bounceSound");
+            foreach (GameObject go in objects)
+                go.LoadContent();
+            //myTexture = Content.Load<Texture2D>("profile_pic");
+            //BounceSound = Content.Load<SoundEffect>("sound/bounceSound");
         }
 
         /// <summary>
@@ -60,10 +67,12 @@ namespace Xbox360Game1
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+            foreach (GameObject go in objects)
+                go.UnloadContent();
         }
 
         // Store some information about the sprite's motion.
-        Vector2 spriteSpeed = new Vector2(50.0f, 50.0f);
+        //Vector2 spriteSpeed = new Vector2(50.0f, 50.0f);
 
         protected override void Update(GameTime gameTime)
         {
@@ -73,11 +82,15 @@ namespace Xbox360Game1
                 this.Exit();
 
             // Move the sprite around.
-            UpdateSprite(gameTime);
+            //UpdateSprite(gameTime);
+
+            foreach (GameObject go in objects)
+                go.Update(gameTime, graphics);
 
             base.Update(gameTime);
         }
 
+        /*
         void UpdateSprite(GameTime gameTime)
         {
             // Move the sprite by speed, scaled by elapsed time.
@@ -137,13 +150,16 @@ namespace Xbox360Game1
             }
         }
 
+         */
         protected override void Draw(GameTime gameTime)
         {
             graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // Draw the sprite.
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-            spriteBatch.Draw(myTexture, spritePosition, Color.White);
+            //spriteBatch.Draw(myTexture, spritePosition, Color.White);
+            foreach (GameObject go in objects)
+                go.Draw(gameTime, spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

@@ -15,13 +15,13 @@ namespace Xbox360Game1
 
         SoundEffect bounceSound;
 
-        SpriteGameObj()
+        public SpriteGameObj()
         {
             position = Vector2.Zero;
             speed = new Vector2(50, 50);
         }
 
-        SpriteGameObj(float x, float y)
+        public SpriteGameObj(float x, float y)
         {
             position = new Vector2(x, y);
             speed = new Vector2(50, 50);
