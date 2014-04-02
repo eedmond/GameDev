@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Xbox360Game1
 {
-    public interface GameObject
+    public abstract class GameObject
     {
         public Vector2 position;
         protected Texture2D sprite;
